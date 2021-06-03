@@ -43,6 +43,14 @@ class Node:
         else:
             return root
 
+
+def print_tree(root):
+    if root != None:
+        print_tree(root.left)
+        print(root.value)
+        print_tree(root.right)
+
+
 if __name__ == '__main__':
     t = Node()
     t.insert(10)
@@ -54,6 +62,7 @@ if __name__ == '__main__':
     t.insert(7)
     t.insert(5)
     t.insert(6)
+    #print_tree(t)
     node = t.breadth_first_search(t, 0)
     if node == None:
         print("No result")
